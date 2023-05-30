@@ -6,7 +6,7 @@ function titleClickHandler(event) {
     const clickedElement = this;
     console.log('Link was clicked!');
 
-    /* [DONE] remove class 'active' from all article links  */
+    /*remove class 'active' from all article links  */
 
     const activeLinks = document.querySelectorAll('.titles a.active');
 
@@ -14,19 +14,19 @@ function titleClickHandler(event) {
         activeLink.classList.remove('active');
     }
 
-    /* [IN PROGRESS] add class 'active' to the clicked link */
-
-    console.log('clickedElement:', clickedElement);
-    clickedElement.classList.add('active');
-
-
-    /* [DONE] remove class 'active' from all articles */
+    /*remove class 'active' from all articles */
 
     const activeArticles = document.querySelectorAll('.post a.active');
 
     for (let activeArticle of activeArticles) {
         activeArticle.classList.remove('active');
     }
+
+    /* add class 'active' to the clicked link */
+
+    console.log('clickedElement:', clickedElement);
+    clickedElement.classList.add('active');
+
 
     /* get 'href' attribute from the clicked link */
     const articleSelector = clickedElement.getAttribute("href");
@@ -40,9 +40,9 @@ function titleClickHandler(event) {
 }
 
 
-const optArticleSelector = document.getElementsByClassName('.post'),
+const optArticleSelector = ('.post'),
     optTitleSelector = ('.post-title'),
-    optTitleListSelector = document.getElementsByClassName('.titles');
+    optTitleListSelector = ('.titles');
 
 function generateTitleLinks() {
     console.log('DONE');
