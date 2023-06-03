@@ -2,6 +2,8 @@
 'use strict';
 
 function titleClickHandler(event) {
+  event.preventDefault();
+  const clickedElement = this;
   console.log('Link was clicked!');
   console.log(event);
   const span = ('span');
@@ -27,6 +29,9 @@ function titleClickHandler(event) {
   for (let activeArticle of activeArticles) {
     activeArticle.classList.remove('active');
   }
+
+  /*add class 'active' to the clicked link */
+  console.log('clickedElement:', clickedElement);
 }
 
 const links = document.querySelectorAll('.titles a');
