@@ -154,7 +154,8 @@ body {
   text-decoration: none;
 }
 
-.tags {
+.tags,
+.authors {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
