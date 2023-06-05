@@ -52,7 +52,7 @@ const optArticleSelector = '.post',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorsSelector = '.post-author',
   optTagsListSelector = '.tags .list',
-  optCloudClassCount = '5',
+  optCloudClassCount = '4',
   optCloudClassPrefix = 'tag-size-';
 
 

@@ -123,3 +123,40 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+.tag-size-1 {
+  font-size: 16px;
+  color: #a29bfe;
+  text-decoration: none;
+}
+
+.tag-size-2 {
+  font-size: 20px;
+  color: #81ecec;
+  text-decoration: none;
+}
+
+.tag-size-3 {
+  font-size: 24px;
+  color: #fdcb6e;
+  text-decoration: none;
+}
+
+.tag-size-4 {
+  font-size: 28px;
+  color: #e17055;
+  text-decoration: none;
+}
+
+.tag-size-5 {
+  font-size: 32px;
+  color: #636e72;
+  text-decoration: none;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
