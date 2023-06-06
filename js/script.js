@@ -141,7 +141,7 @@ function generateTags() {
     console.log('articleTag:', articleTags);
 
     /* split tags into array */
-    const articleTagsArray = articleTags.split('  ');
+    const articleTagsArray = articleTags.split(' ');
     /* START LOOP: for each tag */
     for (let tag of articleTagsArray) {
       console.log(tag);
@@ -375,12 +375,6 @@ function addClickListenersToAuthors() {
   }
 }
 addClickListenersToAuthors();
-
-
-
-
-
-
 
 
 
