@@ -1,5 +1,10 @@
 
 'use strict';
+const templates = {
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+  authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
+};
 
 function titleClickHandler(event) {
   event.preventDefault();
@@ -81,7 +86,8 @@ function generateTitleLinks(customSelector = '') {
     console.log(articleTitle);
 
     /* create HTML of the link */
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    const linkHTMLData = { id: articleId, title: articleTitle };
+    const linkHTML = templates.articleLink(linkHTMLData);
     console.log(linkHTML);
 
     /* insert link into titleList */
@@ -146,7 +152,8 @@ function generateTags() {
     for (let tag of articleTagsArray) {
       console.log(tag);
       /* generate HTML of the link */
-      const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+      const linkHTMLData = { id: 'tag-' + tag, title: tag };
+      const linkHTML = templates.tagLink(linkHTMLData);
       console.log('linkHTML:', linkHTML);
 
       /* add generated code to html variable */
@@ -282,7 +289,8 @@ function generateAuthors() {
     const articleAuthor = article.getAttribute('data-author');
     console.log('articleAuthor:', articleAuthor);
     /* generate HTML of the link */
-    const linkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
+    const linkHTMLData = { id: 'author-' + articleAuthor, title: articleAuthor };
+    const linkHTML = templates.authorLink(linkHTMLData);
     console.log('linkHTML:');
 
     /* add generated code to html variable */
