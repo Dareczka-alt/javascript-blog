@@ -4,6 +4,7 @@ const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
   tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
   authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
+  tagCloudLink: Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML),
 };
 
 function titleClickHandler(event) {
@@ -180,16 +181,19 @@ function generateTags() {
   /*create variable for all links HTML code*/
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
-  let allTagsHTML = '';
+  const allTagsData = { tags: [] };
   /*START LOOP: for each tag in allTags: */
   for (let tag in allTags) {
     /*generate code of link and add it into allTagsHTML*/
-    allTagsHTML += '<li><a href="#' + tag + '"  class="' + calculateTagClass(allTags[tag], tagsParams) + '"><span>' + tag + '</span></a></li>';
-    console.log('allTagsHTML:', allTagsHTML);
+    allTagsData.tags.push({
+      tag: tag,
+      count: allTags[tag],
+      className: calculateTagClass(allTags[tag], tagsParams)
+    });
     /* END LOOP: for each tag in allTags: */
   }
   /* add html from allTags to tagList */
-  tagList.innerHTML = allTagsHTML;
+  tagList.innerHTML = templates.tagCloudLink(allTagsData);
   console.log(allTags);
 }
 
