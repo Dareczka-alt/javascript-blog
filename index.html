@@ -285,6 +285,11 @@
   <li><a href="#{{tag}}" class="{{className}}" count="{{count}}"><span>{{ tag }}</span></a></li>
   {{/each}}
 </script>
+  <script id="template-author-cloud-link" type="text/x-handlebars-template">
+  {{#each articleAuthors}}
+  <li><a href="#{{articleAuthor}}" class="{{className}}"><span>{{ articleAuthor }}</span></a></li>
+  {{/each}}
+</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/script.js"></script>
 </body>
