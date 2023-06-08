@@ -107,6 +107,7 @@ function generateTitleLinks(customSelector = '') {
     link.addEventListener('click', titleClickHandler);
   }
 }
+generateTitleLinks();
 
 function calculateTagsParams(tags) {
   const params = { max: '0', min: '999999' };
