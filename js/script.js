@@ -19,7 +19,7 @@ function titleClickHandler(event) {
   target: span;
   timeStamp: 15021.600000143051;
   toElement: span;
-  type: "click";
+  type: 'click';
 
   /* remove class 'active' from all article links  */
 
@@ -350,7 +350,7 @@ function authorClickHandler(event) {
   target: span;
   timeStamp: 4363.299999952316;
   toElement: span;
-  type: "click";
+  type: 'click';
   console.log('clickedElement:', clickedElement);
   /* make a new constant "href" and read the attribute "href" of the clicked element */
   const href = clickedElement.getAttribute('href');
