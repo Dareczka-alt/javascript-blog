@@ -141,7 +141,7 @@ function generateTags() {
     for (let tag of articleTagsArray) {
 
       /* generate HTML of the link */
-      const linkHTMLData = { id: '#tag-' + tag, title: tag };
+      const linkHTMLData = { id: 'tag-' + tag, title: tag };
       const linkHTML = templates.tagLink(linkHTMLData);
 
 
